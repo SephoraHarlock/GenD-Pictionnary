@@ -1,0 +1,49 @@
+<html lang="fr">
+  <head>
+    <meta charset="UFT-8">
+    <title>Pictionnary</title>
+
+    <style>
+      canvas{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello Picto</h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script>
+      let socket = io();
+
+      const username = prompt('Tell me yout name');
+
+      socket.emit('username', username);
+
+      function setup(){
+        createCanvas(500, 500)
+      }
+
+      function mouseDragged(){
+        line(mouseX, mouseY, pmouseX, pmouseY);
+        socket.emit('line', {
+          mouseX : mouseX,
+          mouseY : mouseY,
+          pmouseX : pmouseX,
+          pmouseY : pmouseY,
+
+          // peut aussi etre écrit
+          //mouse X
+          //mouse Y
+          //pmouseX
+          //pmouseY
+        })
+      }
+
+      socket.io('line', (data) => {
+        line(data.mouseX, data.mouseY, data.pmouseX,data.pmouseY)
+      })
+    </script>
+  </body>
+</html>

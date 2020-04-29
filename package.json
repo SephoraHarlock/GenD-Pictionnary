@@ -1,0 +1,25 @@
+{
+  "name": "gend-pictionnary",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SephoraHarlock/GenD-Pictionnary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SephoraHarlock/GenD-Pictionnary/issues"
+  },
+  "homepage": "https://github.com/SephoraHarlock/GenD-Pictionnary#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "socket.io": "^2.3.0"
+  }
+}
